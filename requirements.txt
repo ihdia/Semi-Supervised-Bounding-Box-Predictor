@@ -1,6 +1,6 @@
 Torch
 json
 cv2
-Numpy
+numpy
 argparse
 collections
