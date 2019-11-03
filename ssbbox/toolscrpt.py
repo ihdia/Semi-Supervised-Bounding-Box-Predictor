@@ -6,8 +6,8 @@ import numpy as np
 import math
 import argparse
 import torch
-from edgeonlyy import Model
-import ConcaveHull as ch
+from .edgeonlyy import Model
+from . import ConcaveHull as ch
 from torch.utils.data import DataLoader
 import operator
 import torch.nn as nn
