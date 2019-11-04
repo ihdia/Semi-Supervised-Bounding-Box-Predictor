@@ -10,8 +10,8 @@ Install requirements stated in requirements.txt
 
 1. Download the model from this [link](https://drive.google.com/drive/folders/10yGtlXGTOFPuF4Wk_gurBhOmyUMqQz2j?usp=sharing) 
 2. Place the `Final.pth` file in the folder (`Semi-Supervised-Bounding-Box-Predictor/ssbbox/`)
-3. Run the script(`Semi-Supervised-Bounding-Box-Predictor/ssbbox/toolscrpt.py`) as ->
+3. Run the script(`Semi-Supervised-Bounding-Box-Predictor/ssbbox/toolscript.py`) as ->
 ```bash
-python3 toolscrpt.py --img path/to/your/image --bbox x,y,w,h
+python3 toolscript.py --img path/to/your/image --bbox x,y,w,h
 ```
 4. This outputs the final result in terms of X and Y (in new lines) coordinates respectively.
