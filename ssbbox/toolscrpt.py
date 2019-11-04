@@ -147,7 +147,7 @@ model = Model(256, 960, 3).to(device)
 #     print("Let's use", torch.cuda.device_count(), "GPUs!")
 #     # dim = 0 [20, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
 #     model = nn.DataParallel(model)
-state_dict = torch.load('./checkpoints_cgcn/Best2_12.pth')
+state_dict = torch.load('./Best2_12.pth')
 new_state_dict = OrderedDict()
 for k, v in state_dict["gcn_state_dict"].items():
     name = k[7:] # remove `module.`
