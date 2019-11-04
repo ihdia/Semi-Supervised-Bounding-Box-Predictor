@@ -9,8 +9,8 @@ Install requirements stated in requirements.txt
 ### To run Inference on your own image
 
 1. Download the model from this [link](https://drive.google.com/drive/folders/10yGtlXGTOFPuF4Wk_gurBhOmyUMqQz2j?usp=sharing) 
-2. Place the `Final.pth` file in the root folder (`Semi-Supervised-Bounding-Box-Predictor/`)
-3. Run the script(`Semi-Supervised-Bounding-Box-Predictor/toolscrpt.py`) as ->
+2. Place the `Final.pth` file in the folder (`Semi-Supervised-Bounding-Box-Predictor/ssbbox/`)
+3. Run the script(`Semi-Supervised-Bounding-Box-Predictor/ssbbox/toolscrpt.py`) as ->
 ```bash
 python3 toolscrpt.py --img path/to/your/image --bbox x,y,w,h
 ```
