@@ -1,3 +1,7 @@
+import os
+
+import numpy
+import requests
 import torch
 import json
 import cv2
@@ -147,7 +151,12 @@ model = Model(256, 960, 3).to(device)
 #     print("Let's use", torch.cuda.device_count(), "GPUs!")
 #     # dim = 0 [20, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
 #     model = nn.DataParallel(model)
-state_dict = torch.load('./Best2_12.pth')
+model_path = os.environ.get('SSBBOX_MODEL_PATH')
+if not model_path:
+    (file_dir, fname) = os.path.split(__file__)
+    model_path = os.path.normpath(os.path.join(file_dir, '..', 'model.pth'))
+
+state_dict = torch.load(model_path, map_location=torch.device('cpu'))
 new_state_dict = OrderedDict()
 for k, v in state_dict["gcn_state_dict"].items():
     name = k[7:] # remove `module.`
@@ -238,7 +247,13 @@ def get_edges(i_url, bboxs):
 
     i_url = str(i_url)
 
-    img = cv2.imread(i_url)
+    img_content = requests.get(i_url).content
+    np_arr = numpy.fromstring(img_content, numpy.uint8)
+    img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+
+    # img = cv2.imread(i_url)
+
+    #  print(img)
 
     polys = []
     for bbox in bboxs:
