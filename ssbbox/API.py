@@ -154,7 +154,7 @@ model = Model(256, 960, 3).to(device)
 model_path = os.environ.get('SSBBOX_MODEL_PATH')
 if not model_path:
     (file_dir, fname) = os.path.split(__file__)
-    model_path = os.path.normpath(os.path.join(file_dir, '..', 'Best2_12.pth'))
+    model_path = os.path.normpath(os.path.join(file_dir, '..', 'model.pth'))
 
 state_dict = torch.load(model_path, map_location=torch.device('cpu'))
 new_state_dict = OrderedDict()
