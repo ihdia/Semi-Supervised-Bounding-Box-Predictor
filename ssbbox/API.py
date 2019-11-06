@@ -200,7 +200,7 @@ def get_edge(img,bbox):
         for k in range((len(edge_logits[j]))):
             j1 = math.floor(j)
             k1 = math.floor(k)
-            if edge_logits[j][k]>0.55:
+            if edge_logits[j][k]>0.68:
                 arrs1[j1+2][k1+5]= 255
 
 
